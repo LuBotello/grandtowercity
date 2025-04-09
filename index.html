@@ -20455,6 +20455,11 @@
 
     /*!sc*/
     @media (min-width:992px) {
+      .ccenLW.site-header--sticky:not(.mobile-sticky-enable) {
+        transition: 0.4s;
+        position: fixed !important;
+      }
+
       .ccenLW.site-header--sticky:not(.mobile-sticky-enable).reveal-header {
         padding-top: 10px;
         z-index: 999;
@@ -20469,10 +20474,39 @@
         transform: translateY(-100%);
         transition: 0.4s;
         background: rgb(48, 96, 149);
-      } 
+      }
+
       .ccenLW.site-header--sticky:not(.mobile-sticky-enable) {
         transition: 0.4s;
         position: fixed !important;
+      }
+
+      .ccenLW.site-header--sticky:not(.mobile-sticky-enable).scrolling .site-navbar {
+        padding-top: 0px;
+        padding-bottom: 0px;
+      }
+
+      .ccenLW .site-navbar {
+        position: static;
+      }
+
+      .ccenLW .navbar-expand-lg {
+        flex-wrap: nowrap;
+        -webkit-box-pack: justify !important;
+        justify-content: space-between !important;
+      }
+
+      .navbar-expand-lg {
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+      }
+
+      .navbar-expand-lg .navbar-toggler {
+        display: none;
+      }
+
+      .navbar-expand-lg .navbar-collapse {
+        display: flex !important;
       }
     }
 
@@ -21059,12 +21093,71 @@
       content: "jtRPCq,"
     }
 
+    .ccenLW {
+      position: absolute;
+      width: 100%;
+      z-index: 99;
+      top: 0px;
+    }
+
     .ccenLW.site-header--sticky:not(.mobile-sticky-enable) {
       top: 0px;
       right: 0px;
       width: 100%;
       z-index: 999;
       position: absolute !important;
+    }
+
+    .ccenLW.site-header--sticky:not(.mobile-sticky-enable) {
+      top: 0px;
+      right: 0px;
+      width: 100%;
+      z-index: 999;
+      position: absolute !important;
+    }
+
+    .navbar {
+      position: relative;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: .5rem;
+      padding-bottom: .5rem;
+    }
+
+    .navbar-brand {
+      padding-top: .3125rem;
+      padding-bottom: .3125rem;
+      margin-right: 1rem;
+      font-size: 1.25rem;
+      white-space: nowrap;
+    }
+    .ccenLW .nueva-navbar {
+      display: flex;
+      -webkit-box-align: center;
+      align-items: center;
+    }
+
+    .ccenLW.light-header .hamburgur {
+      color: rgb(255, 255, 255);
+      border: none;
+    }
+
+    .ccenLW .hamburgur {
+      order: 3;
+      border-color: rgba(255, 255, 255, 0.5);
+      color: rgba(255, 255, 255, 0.77);
+    }
+
+    .navbar-collapse {
+      align-items: center;
+      width: 100%;
+    }
+
+    .ccenLW.light-header.site-header--menu-end .navbar-collapse {
+      -webkit-box-pack: end;
+      justify-content: flex-end;
     }
 
     /*!sc*/
