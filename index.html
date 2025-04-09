@@ -20406,6 +20406,25 @@
         transition: 0.4s;
         position: fixed !important;
       }
+      .ccenLW .site-navbar {
+        position: static;
+      }
+      .ccenLW .navbar-expand-lg {
+        flex-wrap: nowrap;
+        -webkit-box-pack: justify !important;
+        justify-content: space-between !important;
+      }
+      .navbar-expand-lg {
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+      }
+      .navbar-expand-lg .navbar-toggler {
+        display: none;
+      }
+
+      .navbar-expand-lg .navbar-collapse {
+        display: flex !important;
+      }
     }
 
     .ccenLW.site-header--sticky:not(.mobile-sticky-enable) {
@@ -20421,6 +20440,49 @@
       width: 100%;
       z-index: 99;
       top: 0px;
+    }
+    .navbar {
+      position: relative;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: .5rem;
+      padding-bottom: .5rem;
+    }
+    .navbar-brand {
+      padding-top: .3125rem;
+      padding-bottom: .3125rem;
+      margin-right: 1rem;
+      font-size: 1.25rem;
+      white-space: nowrap;
+    }
+    .ccenLW .nueva-navbar {
+      display: flex;
+      -webkit-box-align: center;
+      align-items: center;
+    }
+    .ccenLW.light-header .hamburgur {
+      color: rgb(255, 255, 255);
+      border: none;
+    }
+    .ccenLW .hamburgur {
+      order: 3;
+      border-color: rgba(255, 255, 255, 0.5);
+      color: rgba(255, 255, 255, 0.77);
+    }
+    .navbar-dark .navbar-toggler {
+      color: hsla(0, 0%, 100%, .55);
+      border-color: hsla(0, 0%, 100%, .1);
+    }
+
+    .ccenLW.light-header.site-header--menu-end .navbar-collapse {
+      -webkit-box-pack: end;
+      justify-content: flex-end;
+    }
+    .navbar-collapse {
+      align-items: center;
+      width: 100%;
     }
     /*!sc*/
     @media (min-width:1200px) {}
@@ -23056,8 +23118,7 @@
 <body>
   <div id="___gatsby">
     <div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper">
-      <div
-        class="style__SiteHeader-sc-61nwup-0 ccenLW site-header site-header--menu-end light-header site-header--sticky scrolling reveal-header  site-header">
+      <div class="style__SiteHeader-sc-61nwup-0 ccenLW site-header site-header--menu-end light-header site-header--sticky   site-header">
         <div class="container">
           <nav class="site-navbar navbar navbar-expand-lg navbar-dark bg-dark"><a href="/" class="navbar-brand"><img
                 src="data:image/png;base64,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"
