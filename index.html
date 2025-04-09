@@ -20510,6 +20510,18 @@
 
     /*!sc*/
     @media (min-width:992px) {
+      .ccenLW.site-header--sticky:not(.mobile-sticky-enable).scrolling {
+        transform: translateY(-100%);
+        transition: 0.4s;
+        background: rgb(48, 96, 149);
+      }
+      .ccenLW.site-header--sticky:not(.mobile-sticky-enable) {
+        transition: 0.4s;
+        position: fixed !important;
+      }
+      .ccenLW .site-navbar {
+        position: static;
+      }
     }
     
 
