@@ -20429,6 +20429,34 @@
         color: rgb(255, 255, 255);
         padding: 17px 24px 15px !important;
       }
+
+      .ccenLW.site-header--sticky:not(.mobile-sticky-enable).scrolling {
+        transform: translateY(-100%);
+        transition: 0.4s;
+        background: rgb(48, 96, 149);
+      }
+      .ccenLW.site-header--sticky:not(.mobile-sticky-enable) {
+        transition: 0.4s;
+        position: fixed !important;
+      }
+
+      .ccenLW.site-header--sticky:not(.mobile-sticky-enable).reveal-header {
+        padding-top: 10px;
+        z-index: 999;
+        padding-bottom: 10px;
+      }
+
+      .ccenLW.site-header--sticky:not(.mobile-sticky-enable).reveal-header {
+        transform: translateY(0%);
+        box-shadow: rgba(65, 62, 101, 0.1) 0px 12px 34px -11px;
+        z-index: 1000;
+      }
+
+      .ccenLW.site-header--sticky:not(.mobile-sticky-enable).scrolling {
+        transform: translateY(-100%);
+        transition: 0.4s;
+        background: rgb(48, 96, 149);
+      }
     }
 
     .ccenLW.site-header--sticky:not(.mobile-sticky-enable) {
@@ -23179,6 +23207,27 @@
     fbq('init', '641495950568071'); // Insert your pixel ID here.
     fbq('track', 'PageView');
   </script>
+  <script>
+    window.addEventListener('scroll', function () {
+      const body = document.body;
+      const scrollY = window.scrollY;
+  
+      // Agrega la clase 'scrolling' si scrollY es mayor a 0
+      if (scrollY > 0) {
+        body.classList.add('scrolling');
+      } else {
+        body.classList.remove('scrolling');
+      }
+  
+      // Agrega la clase 'reveal-header' si scrollY supera cierta distancia (por ejemplo 200px)
+      if (scrollY > 200) {
+        body.classList.add('reveal-header');
+      } else {
+        body.classList.remove('reveal-header');
+      }
+    });
+  </script>
+  
   <link as="script" rel="preload" href="/webpack-runtime-7c27fad9ae4da4cda564.js" />
   <link as="script" rel="preload" href="/framework-10378d1f49d04ce64e26.js" />
   <link as="script" rel="preload" href="/app-4e431fe2714bea7073ee.js" />
