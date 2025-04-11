@@ -23142,6 +23142,10 @@
         height: 24px;
       }
     }
+
+    .site-header {
+      z-index: 10000; /* Asegúrate de que este valor sea mayor que el del botón de WhatsApp */
+    }
   </style>
   <title data-react-helmet="true">Grand Tower Centenario</title>
   <link data-react-helmet="true" rel="icon" type="image/png"
@@ -23205,23 +23209,18 @@
   <script>
     window.addEventListener('scroll', function () {
       const header = document.querySelector('.site-header');
-      if (!header) return; // Previene errores si el header no existe
-  
+      if (!header) return;
+
       const scrollY = window.scrollY;
-  
-      // Asegúrate de que la clase 'site-header' siempre esté presente
-      if (!header.classList.contains('site-header')) {
-        header.classList.add('site-header');
-      }
-  
-      // Agrega o quita la clase 'scrolling'
+
+      // Agrega o elimina la clase 'scrolling'
       if (scrollY > 0) {
         header.classList.add('scrolling');
       } else {
         header.classList.remove('scrolling');
       }
-  
-      // Agrega o quita la clase 'reveal-header'
+
+      // Agrega o elimina la clase 'reveal-header' si scrollY supera cierta distancia (por ejemplo, 200px)
       if (scrollY > 200) {
         header.classList.add('reveal-header');
       } else {
