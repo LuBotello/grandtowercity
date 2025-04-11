@@ -23208,25 +23208,31 @@
     fbq('track', 'PageView');
   </script>
   <script>
-    window.addEventListener('scroll', function () {
-      const body = document.body;
-      const scrollY = window.scrollY;
+    document.addEventListener('DOMContentLoaded', function () {
+      window.addEventListener('scroll', function () {
+        const body = document.body;
+        const scrollY = window.scrollY;
   
-      // Agrega la clase 'scrolling' si scrollY es mayor a 0
-      if (scrollY > 0) {
-        body.classList.add('scrolling');
-      } else {
-        body.classList.remove('scrolling');
-      }
+        console.log("ScrollY:", scrollY); // Para probar si el evento funciona
   
-      // Agrega la clase 'reveal-header' si scrollY supera cierta distancia (por ejemplo 200px)
-      if (scrollY > 200) {
-        body.classList.add('reveal-header');
-      } else {
-        body.classList.remove('reveal-header');
-      }
+        if (scrollY > 0) {
+          body.classList.add('scrolling');
+          console.log("Clase 'scrolling' añadida");
+        } else {
+          body.classList.remove('scrolling');
+          console.log("Clase 'scrolling' removida");
+        }
+  
+        if (scrollY > 200) {
+          body.classList.add('reveal-header');
+          console.log("Clase 'reveal-header' añadida");
+        } else {
+          body.classList.remove('reveal-header');
+          console.log("Clase 'reveal-header' removida");
+        }
+      });
     });
-  </script>
+  </script>  
   
   <link as="script" rel="preload" href="/webpack-runtime-7c27fad9ae4da4cda564.js" />
   <link as="script" rel="preload" href="/framework-10378d1f49d04ce64e26.js" />
