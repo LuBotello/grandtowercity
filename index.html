@@ -23208,20 +23208,17 @@
   </script>
   <script>
     window.addEventListener('scroll', function () {
-      const header = document.querySelector('.site-header');
+      const header = document.querySelector('[class*="site-header"]');
       if (!header) return;
-
-      const scrollY = window.scrollY;
-
-      // Agrega o elimina la clase 'scrolling'
-      if (scrollY > 0) {
+  
+      // No quitar clases existentes, solo agregar si no están
+      if (window.scrollY > 0) {
         header.classList.add('scrolling');
       } else {
         header.classList.remove('scrolling');
       }
-
-      // Agrega o elimina la clase 'reveal-header' si scrollY supera cierta distancia (por ejemplo, 200px)
-      if (scrollY > 200) {
+  
+      if (window.scrollY > 200) {
         header.classList.add('reveal-header');
       } else {
         header.classList.remove('reveal-header');
